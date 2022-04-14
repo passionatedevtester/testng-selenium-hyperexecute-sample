@@ -12,8 +12,5 @@ tasks:
       export LT_USERNAME=himanshujlambdatest
       export LT_ACCESS_KEY=DLGw9ZAiJgjofx05nZVQ0T7GtZuCPHzX0XnEMjxivJy267p7i6
       export HYPEREXECUTE_PLATFORM="macos Catalina"
-    init: |
-      echo "Performing test"
-      ./hyperexecute --config yaml/mac/testng_hyperexecute_autosplit_sample.yaml --download-artifacts --force-clean-artifacts
-      echo "Test completion"
-
+  - init: echo "Performing test"
+    command: ./hyperexecute --config yaml/mac/testng_hyperexecute_autosplit_sample.yaml --download-artifacts --force-clean-artifacts
