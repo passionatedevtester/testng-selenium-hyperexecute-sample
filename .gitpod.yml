@@ -9,8 +9,8 @@ tasks:
     before: |
       wget https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
       chmod 0777 hyperexecute
-      export LT_USERNAME=himanshujlambdatest
-      export LT_ACCESS_KEY=DLGw9ZAiJgjofx05nZVQ0T7GtZuCPHzX0XnEMjxivJy267p7i6
+      export LT_USERNAME="LT_USERNAME"
+      export LT_ACCESS_KEY="LT_ACCESS_KEY"
       export HYPEREXECUTE_PLATFORM=win10
     init: |
       echo "Performing test"
