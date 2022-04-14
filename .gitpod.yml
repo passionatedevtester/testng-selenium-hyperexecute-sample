@@ -8,7 +8,7 @@ tasks:
   
   - name: Get Core & Configure
     before: |
-      wget https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
+      # wget https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
       export LT_USERNAME=himanshujlambdatest
       export LT_ACCESS_KEY=DLGw9ZAiJgjofx05nZVQ0T7GtZuCPHzX0XnEMjxivJy267p7i6
       export HYPEREXECUTE_PLATFORM="win 10"
