@@ -15,16 +15,10 @@ tasks:
     command: chmod 0777 hyperexecute
   - name: Export UserName
     before: echo 'Export UserName'
-    init: echo 'Export UserName'
-    command: export LT_USERNAME=himanshujlambdatest
-  - name: Export AccessKey
-    before: echo 'Export AccessKey'
-    init: echo 'Export AccessKey'
-    command: export LT_ACCESS_KEY=eBWZGTtxP1zhmsunJoBU5Ks0KB8bIvBaP57OtPG1lqnR7nEJwI
-  - name: Change Platform
-    before: echo 'Change Platform'
-    init: echo 'Change Platform'
-    command: export HYPEREXECUTE_PLATFORM="win10"
+    env:
+     LT_USERNAME=himanshujlambdatest
+     LT_ACCESS_KEY=eBWZGTtxP1zhmsunJoBU5Ks0KB8bIvBaP57OtPG1lqnR7nEJwI
+     HYPEREXECUTE_PLATFORM="win10"
   - name: Test Execution
     before: echo 'Run tests'
     init: echo 'Run tests'
