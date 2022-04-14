@@ -5,14 +5,27 @@ ports:
 
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: Get Core & Configure
-    before: |
-      wget https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
-      chmod 0777 hyperexecute
-      export LT_USERNAME=himanshujlambdatest
-      export LT_ACCESS_KEY=eBWZGTtxP1zhmsunJoBU5Ks0KB8bIvBaP57OtPG1lqnR7nEJwI
-      export HYPEREXECUTE_PLATFORM=win10
-    init: |
-      echo "Performing test"
-      ./hyperexecute --config yaml/win/testng_hyperexecute_autosplit_sample.yaml --download-artifacts --force-clean-artifacts
-      echo "Test completion"
+  - name: Download HyperExecute
+    before: echo 'before script'
+    init: echo 'init script'
+    command: wget https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+  - name: Change mode
+    before: echo 'Change mode'
+    init: echo 'Change mode'
+    command: chmod 0777 hyperexecute
+  - name: Export UserName
+    before: echo 'Export UserName'
+    init: echo 'Export UserName'
+    command: export LT_USERNAME=himanshujlambdatest
+  - name: Export AccessKey
+    before: echo 'Export AccessKey'
+    init: echo 'Export AccessKey'
+    command: export LT_ACCESS_KEY=eBWZGTtxP1zhmsunJoBU5Ks0KB8bIvBaP57OtPG1lqnR7nEJwI
+  - name: Change Platform
+    before: echo 'Change Platform'
+    init: echo 'Change Platform'
+    command: export HYPEREXECUTE_PLATFORM="win10"
+  - name: Test Execution
+    before: echo 'Run tests'
+    init: echo 'Run tests'
+    command: ./hyperexecute --config yaml/win/testng_hyperexecute_autosplit_sample.yaml --download-artifacts --force-clean-artifacts
